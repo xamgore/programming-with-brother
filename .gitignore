@@ -1,0 +1,6 @@
+Output/
+Samples/
+*.ini
+*.pcu
+*.pdb
+*.exe
