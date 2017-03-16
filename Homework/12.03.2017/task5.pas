@@ -13,5 +13,8 @@ end;
 
 
 begin
-  task5(maxSeqOfZeros);
+  var arr: array of integer := (7, 4, 0, 0, 5, 7, 0, 7);
+  writeln(maxSeqOfZeros(arr));
+
+  // task5(maxSeqOfZeros);
 end.

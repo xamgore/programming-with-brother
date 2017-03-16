@@ -29,7 +29,16 @@ begin
 end;
 
 procedure task1(f: arrayOf<integer> -> arrayOf<integer>);
-begin  
+begin
+  var run: seqOf<integer> -> seqOf<integer> := x -> f(x.ToArray).Sorted;
+  
+  assertSeqEq(run(seq(1, 2, 3, 4, 5)), seq(1, 2, 3, 4 ,5), 'test1');
+  assertSeqEq(run(seq(1, 1, 1, 1, 1)), seq(1), 'test2');
+  assertSeqEq(run(seq(1, 2, 1, 2, 1)), seq(1, 2), 'test3');
+  assertSeqEq(run(seq(1, 2, 2, 3, 3, 3)), seq(1, 2, 3), 'test4');
+  assertSeqEq(run(seq(3, 0, 0, 1, 0, 0, 3)), seq(0, 1, 3), 'test5');
+  
+  writeln('All tests are passed!');
 end;
 
 procedure task2(f: arrayOf<integer> -> integer);
@@ -52,8 +61,10 @@ begin
       d[x] := 1;
   end;
   
-  assertEq(true, d.SequenceEqual(task4Dict));
-  // todo //assertEq(d, task4Dict);
+  //assertSeqEq(d.ToArray, task4Dict.ToArray);
+  writeln('Expected: ', d);
+  writeln('Actual:   ', task4Dict);
+  //writeln('All tests passed! Run again.');
 end;
 
 procedure task5(f: arrayOf<integer> -> integer);

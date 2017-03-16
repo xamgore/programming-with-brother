@@ -12,5 +12,8 @@ end;
 
 
 begin
-  task2(countUnique);
+  var arr: array of integer := (7, 4, 0, 5, 7, 0, 7);
+  writeln(countUnique(arr));
+
+  // task2(countUnique);
 end.

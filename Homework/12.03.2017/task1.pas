@@ -12,5 +12,8 @@ end;
 
 
 begin
-  task1(getUnique);
+  var arr := Seq(7, 4, 0, 5, 7, 0, 7).ToArray;
+  writeln(getUnique(arr));
+  writeln(seq(1).ToArray);
+  // task1(getUnique);
 end.
