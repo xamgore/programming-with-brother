@@ -7,7 +7,7 @@ uses tests;
 function getUnique(a: array of integer): array of integer;
 begin
   // ...
-  result := a;
+  result := a; // hello
 end;
 
 
